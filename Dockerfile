@@ -8,6 +8,9 @@ WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
+# ===> ADICIONE ESTA LINHA PARA DAR PERMISSÃO <===
+RUN chmod +x mvnw
+
 # Baixa as dependências (isso cria um cache para builds mais rápidos)
 RUN ./mvnw dependency:go-offline
 
